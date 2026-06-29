@@ -31,22 +31,13 @@ export function Header() {
         <div 
           className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg-primary)] via-blue-900/20 to-[var(--color-bg-primary)] bg-[length:200%_200%] backdrop-blur-3xl"
         />
-        <motion.div 
-          animate={{ x: ['-100%', '200%'] }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-0 left-0 h-[2px] w-1/2 bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent opacity-70"
-        />
+
+        {/* Central Bold Neon Line Background */}
+        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-[2px] bg-cyan-400 blur-[1px] pointer-events-none z-0 opacity-90"></div>
+        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-[8px] bg-cyan-500 blur-[6px] pointer-events-none z-0 opacity-80"></div>
+        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 h-[24px] bg-blue-600 blur-[16px] pointer-events-none z-0 opacity-50"></div>
         
         <Link href="/" className="relative flex items-center justify-center">
-          {/* Mini Kamehameha Beam */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[50px] pointer-events-none flex items-center justify-center mix-blend-screen overflow-visible -z-10">
-            <div className="absolute w-full h-1 bg-white blur-[2px] opacity-90 animate-[pulse_0.1s_ease-in-out_infinite] rotate-[-2deg] scale-150"></div>
-            <div className="absolute w-full h-4 bg-cyan-400 blur-[8px] opacity-80 animate-[pulse_0.2s_ease-in-out_infinite] rotate-[-2deg] scale-150"></div>
-            <div className="absolute w-full h-12 bg-blue-600 blur-[15px] opacity-60 animate-[pulse_0.4s_ease-in-out_infinite] rotate-[-2deg] scale-150"></div>
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 bg-white rounded-full blur-[5px] animate-[pulse_0.15s_ease-in-out_infinite]"></div>
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-cyan-300 rounded-full blur-[10px] opacity-80 animate-[pulse_0.3s_ease-in-out_infinite]"></div>
-            <div className="absolute left-0 top-1/2 -translate-y-1/2 w-20 h-20 bg-blue-600 rounded-full blur-[20px] opacity-60 animate-[pulse_0.5s_ease-in-out_infinite]"></div>
-          </div>
 
           <motion.nav 
             initial={{ opacity: 0, x: -20 }}
