@@ -77,11 +77,10 @@ export default function Home() {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
-            Build Your Resume <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block min-w-[280px] sm:min-w-[400px]">
+            <span className="inline-block min-w-[280px] sm:min-w-[450px] md:min-w-[600px] text-left">
               <Typewriter
                 options={{
-                  strings: ['in Minutes.', 'with AI.', 'for Free.', 'Like a Pro.'],
+                  strings: ['Build Your Resume', 'Create Your Resume', 'Design Your Resume', 'Craft Your Resume'],
                   autoStart: true,
                   loop: true,
                   delay: 50,
@@ -89,6 +88,10 @@ export default function Home() {
                   cursor: '|',
                 }}
               />
+            </span>
+            <br className="hidden md:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block">
+              in Minutes
             </span>
           </motion.h1>
           
