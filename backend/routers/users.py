@@ -64,13 +64,18 @@ async def upload_avatar(
     with open(file_path, "wb") as f:
         f.write(contents)
         
-    fake_url = f"http://127.0.0.1:8000/avatars/{filename}"
+    
+    base_url = str(request.base_url)
+    if base_url.endswith("/"):
+        base_url = base_url[:-1]
+    
+    avatar_url = f"{base_url}/avatars/{filename}"
     
     user = auth_service.user_repo.get_by_id(current_user.id)
     if not user:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
         
-    user.profile_picture_url = fake_url
+    user.profile_picture_url = avatar_url
     updated_user = auth_service.user_repo.update(user)
     
     auth_service.audit_repo.create(AuditLog(
