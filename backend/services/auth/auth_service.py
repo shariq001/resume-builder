@@ -1,5 +1,5 @@
 from uuid import UUID, uuid4
-from fastapi import HTTPException, status
+from fastapi import HTTPException, status, BackgroundTasks
 from datetime import datetime, timedelta, timezone
 from backend.repositories.user_repository import UserRepository, RefreshTokenRepository
 from backend.repositories.audit_repository import AuditRepository
@@ -178,7 +178,7 @@ class AuthService:
             ip_address=ip_address
         ))
 
-    def forgot_password(self, email: str, ip_address: str) -> None:
+    def forgot_password(self, email: str, ip_address: str, background_tasks: BackgroundTasks) -> None:
         user = self.user_repo.get_by_email(email)
         if not user:
             return  # Do not reveal that the user does not exist
@@ -199,7 +199,7 @@ class AuthService:
             ip_address=ip_address
         ))
         
-        send_reset_password_email(user.email, token)
+        background_tasks.add_task(send_reset_password_email, user.email, token)
 
     def reset_password(self, token: str, new_password: str, ip_address: str) -> None:
         user = self.user_repo.get_by_reset_token(token)

@@ -27,10 +27,12 @@ def logout(request: Request, data: LogoutRequest, auth_service: AuthService = De
 
 from backend.schemas.auth import ForgotPasswordRequest, ResetPasswordRequest
 
+from fastapi import BackgroundTasks
+
 @router.post("/forgot-password", status_code=status.HTTP_200_OK)
-def forgot_password(request: Request, data: ForgotPasswordRequest, auth_service: AuthService = Depends(get_auth_service)):
+def forgot_password(request: Request, data: ForgotPasswordRequest, background_tasks: BackgroundTasks, auth_service: AuthService = Depends(get_auth_service)):
     ip_address = request.client.host if request.client else "127.0.0.1"
-    auth_service.forgot_password(data.email, ip_address)
+    auth_service.forgot_password(data.email, ip_address, background_tasks)
     return {"message": "If that email is registered, a reset link has been sent."}
 
 @router.post("/reset-password", status_code=status.HTTP_200_OK)
