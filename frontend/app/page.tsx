@@ -129,11 +129,11 @@ export default function Home() {
           <div className="absolute top-[10%] bottom-[10%] left-1/2 -translate-x-1/2 w-8 md:hidden z-0 pointer-events-none">
             <svg className="w-full h-full overflow-visible" preserveAspectRatio="none">
               <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="2" />
-              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(0, 242, 254, 0.8)" strokeWidth="3" strokeDasharray="6 30" strokeLinecap="round">
-                <animate attributeName="stroke-dashoffset" values="36;0" dur="1.5s" repeatCount="indefinite" />
+              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(0, 242, 254, 0.8)" strokeWidth="4" strokeDasharray="0 50" strokeLinecap="round">
+                <animate attributeName="stroke-dashoffset" values="50;0" dur="2s" repeatCount="indefinite" />
               </line>
-              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(0, 242, 254, 0.3)" strokeWidth="8" strokeDasharray="6 30" strokeLinecap="round" filter="blur(4px)">
-                <animate attributeName="stroke-dashoffset" values="36;0" dur="1.5s" repeatCount="indefinite" />
+              <line x1="50%" y1="0" x2="50%" y2="100%" stroke="rgba(0, 242, 254, 0.4)" strokeWidth="12" strokeDasharray="0 50" strokeLinecap="round" filter="blur(4px)">
+                <animate attributeName="stroke-dashoffset" values="50;0" dur="2s" repeatCount="indefinite" />
               </line>
             </svg>
           </div>
@@ -152,25 +152,25 @@ export default function Home() {
               <path 
                 d="M 50 25 C 35 25, 20 40, 25 75 C 35 90, 65 90, 75 75 C 80 40, 65 25, 50 25 Z" 
                 fill="none" 
-                stroke="rgba(0, 242, 254, 0.8)" 
-                strokeWidth="2" 
-                strokeDasharray="2 6" 
+                stroke="rgba(0, 242, 254, 0.9)" 
+                strokeWidth="3" 
+                strokeDasharray="0 15" 
                 strokeLinecap="round"
                 vectorEffect="non-scaling-stroke"
               >
-                <animate attributeName="stroke-dashoffset" values="8;0" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="stroke-dashoffset" values="15;0" dur="2s" repeatCount="indefinite" />
               </path>
               <path 
                 d="M 50 25 C 35 25, 20 40, 25 75 C 35 90, 65 90, 75 75 C 80 40, 65 25, 50 25 Z" 
                 fill="none" 
-                stroke="rgba(0, 242, 254, 0.3)" 
-                strokeWidth="5" 
-                strokeDasharray="2 6" 
+                stroke="rgba(0, 242, 254, 0.4)" 
+                strokeWidth="7" 
+                strokeDasharray="0 15" 
                 strokeLinecap="round"
                 filter="blur(3px)"
                 vectorEffect="non-scaling-stroke"
               >
-                <animate attributeName="stroke-dashoffset" values="8;0" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="stroke-dashoffset" values="15;0" dur="2s" repeatCount="indefinite" />
               </path>
             </svg>
           </div>
