@@ -23,6 +23,19 @@ export default function Home() {
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
   };
 
+  const typingContainer = {
+    hidden: { opacity: 1 },
+    show: {
+      opacity: 1,
+      transition: { staggerChildren: 0.04, delayChildren: 0.1 }
+    }
+  };
+
+  const typingChar = {
+    hidden: { opacity: 0, filter: "blur(10px)", y: 15 },
+    show: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 0.4, ease: "easeOut" } }
+  };
+
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0F0726] via-[#1A0B2E] to-[#0A0514] bg-[length:200%_200%] animate-gradient-bg">
       {/* Animated Background Orbs */}
@@ -74,10 +87,27 @@ export default function Home() {
             Premium Templates Live
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
-            Build Your Resume <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg">
-              in Minutes
+          <motion.h1 variants={typingContainer} initial="hidden" animate="show" className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm flex flex-wrap justify-center items-center">
+            {"Build Your Resume".split(" ").map((word, wIdx) => (
+              <span key={wIdx} className="inline-block whitespace-nowrap mr-[0.25em]">
+                {word.split("").map((char, cIdx) => (
+                  <motion.span key={cIdx} variants={typingChar} className="inline-block">
+                    {char}
+                  </motion.span>
+                ))}
+              </span>
+            ))}
+            <br className="hidden md:block w-full"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block whitespace-nowrap">
+              {"in Minutes".split(" ").map((word, wIdx) => (
+                <span key={`grad-${wIdx}`} className="inline-block whitespace-nowrap mr-[0.25em]">
+                  {word.split("").map((char, cIdx) => (
+                    <motion.span key={`grad-${wIdx}-${cIdx}`} variants={typingChar} className="inline-block">
+                      {char}
+                    </motion.span>
+                  ))}
+                </span>
+              ))}
             </span>
           </motion.h1>
           
