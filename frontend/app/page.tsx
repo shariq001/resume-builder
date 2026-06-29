@@ -70,8 +70,8 @@ export default function Home() {
           animate="show"
           className="max-w-5xl mx-auto space-y-8"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center justify-center px-5 py-2 rounded-full border border-[var(--color-accent)]/30 bg-[var(--color-accent)]/10 text-[var(--color-accent)] font-semibold text-sm mb-4 shadow-sm backdrop-blur-md">
-            <span className="mr-2 animate-pulse">✨</span> Premium Templates Live
+          <motion.div variants={itemVariants} className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-blue-400/30 bg-gradient-to-br from-[#0F0726] via-[#1A0B2E] to-[#0A0514] bg-[length:200%_200%] animate-gradient-bg text-blue-100 font-semibold text-sm mb-4 shadow-[0_0_15px_rgba(59,130,246,0.2)] backdrop-blur-md tracking-wide">
+            Premium Templates Live
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
