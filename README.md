@@ -1,105 +1,83 @@
-# ATS Resume Builder
+<div align="center">
 
-An elegant, modern, and highly-responsive Resume Builder that helps you bypass Applicant Tracking Systems (ATS) while presenting a visually stunning document to recruiters.
+# ✨ ATS Resume Builder
 
-![Resume Builder Banner](https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1200)
+**An elegant, modern, and highly-responsive Resume Builder that helps you bypass Applicant Tracking Systems while presenting a visually stunning document to recruiters.**
 
-## 🚀 Features
-- **Real-Time Live Preview**: Watch your resume compile instantly alongside the editor.
-- **ATS-Optimized Export**: Generates parser-friendly PDFs that ensure formatting passes automated bot screens.
-- **Intelligent Templates**: Includes Modern, Classic, and Minimal templates dynamically colored and mapped.
-- **Secure Authentication**: Session-based user persistence securely stores your generated resumes so you can come back and edit them later.
-- **Fully Responsive**: Perfectly formatted for all devices, from 320px mobile screens to ultra-wide 1600px desktop monitors.
-- **Premium UI**: Crafted using Framer Motion and TailwindCSS for slick micro-animations, glassmorphism, and seamless dark/light modes.
+<br />
 
----
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-black?style=for-the-badge&logo=framer&logoColor=blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)
+![PostgreSQL](https://img.shields.io/badge/postgresql-4169e1?style=for-the-badge&logo=postgresql&logoColor=white)
 
-## 🛠️ Tech Stack
-### Frontend
-- **Framework**: Next.js 14 (App Router)
-- **Styling**: Tailwind CSS + Custom Vanilla Tokens
-- **Animations**: Framer Motion
-- **State Management**: Zustand
-- **Icons**: Lucide React
+<br />
 
-### Backend
-- **Framework**: FastAPI (Python)
-- **Database**: PostgreSQL / SQLite (SQLAlchemy ORM)
-- **Authentication**: JWT Access & Refresh Tokens
-- **PDF Generation**: Weasyprint / wkhtmltopdf
+<img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=1200" alt="Resume Builder Banner" style="border-radius: 15px; box-shadow: 0 4px 30px rgba(0,0,0,0.5);" />
+
+</div>
+
+<br />
+
+## 🌟 Why This Resume Builder?
+
+In today's competitive job market, your resume needs to satisfy two completely different audiences: **The AI Bots** (Applicant Tracking Systems) and **The Human Recruiters**. 
+
+Most builders force you to choose between a beautiful design that fails ATS parsing, or a boring text document that puts recruiters to sleep. **We built a solution that flawlessly does both.** 
 
 ---
 
-## 💻 Local Development
+## 🚀 Spectacular Features
 
-### Frontend Setup
-1. Navigate to the frontend directory: `cd frontend`
-2. Install dependencies: `npm install`
-3. Set your environment variables by creating a `.env.local` file:
-   ```env
-   NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
-   ```
-4. Run the development server: `npm run dev`
-5. Open [http://localhost:3000](http://localhost:3000)
+### ⚡ Real-Time Live Preview
+> *No more blind editing.* Watch your resume compile instantly alongside the editor as you type. Our split-screen engine ensures you know exactly how the final document will look.
 
-### Backend Setup
-1. Navigate to the backend directory: `cd backend`
-2. Create a virtual environment: `python -m venv venv`
-3. Activate the virtual environment:
-   - Windows: `.\venv\Scripts\activate`
-   - Unix/macOS: `source venv/bin/activate`
-4. Install dependencies: `pip install -r requirements.txt`
-5. Ensure PDF Generation libraries are installed on your OS (e.g., `wkhtmltopdf`).
-6. Run the server: `uvicorn main:app --reload`
-7. The API will run on `http://127.0.0.1:8000`
+### 🤖 ATS-Optimized Export Engine
+> *Get past the bots.* Our proprietary PDF export utilizes strict document mapping. While it looks like a premium design, the underlying text is perfectly layered so ATS parsers can seamlessly extract your skills and experience.
+
+### 🎨 Intelligent Premium Templates
+> Choose between **Modern**, **Classic**, and **Minimal** architectures. Each template automatically scales fonts, re-aligns layouts, and intelligently handles long paragraphs to prevent page overflow.
+
+### 📱 Flawlessly Responsive UI
+> Build your resume from a 320px mobile phone or an ultra-wide desktop. Our interface features touch-friendly sliding menus, dynamic preview toggles, and seamless screen adaptation. 
+
+### 🔐 Secure Cloud Storage
+> JWT-based authentication allows you to securely save multiple resume versions to your dashboard. Return anytime to edit, duplicate, or delete your resumes safely.
 
 ---
 
-## 🌐 Deployment Guide
+## 🛠️ The Technology Architecture
 
-### Deploying the Frontend (Vercel)
-The frontend is perfectly structured for immediate deployment on Vercel.
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><b>Frontend Stack</b></td>
+      <td align="center"><b>Backend Stack</b></td>
+    </tr>
+    <tr>
+      <td>
+        <ul>
+          <li><b>Next.js 14</b> (App Router)</li>
+          <li><b>Tailwind CSS</b> (Custom Tokens & Glassmorphism)</li>
+          <li><b>Framer Motion</b> (Slick micro-animations)</li>
+          <li><b>Zustand</b> (Global state management)</li>
+        </ul>
+      </td>
+      <td>
+        <ul>
+          <li><b>FastAPI</b> (High-performance async Python)</li>
+          <li><b>SQLAlchemy</b> (Robust ORM mapping)</li>
+          <li><b>JWT</b> (Secure tokenized auth)</li>
+          <li><b>Weasyprint</b> (Flawless HTML-to-PDF rendering)</li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</div>
 
-1. **Push your code to GitHub**: Ensure the repository is uploaded to GitHub.
-2. **Log into Vercel**: Go to [Vercel.com](https://vercel.com) and click **"Add New Project"**.
-3. **Import Repository**: Select this repository from your GitHub.
-4. **Configure Project**:
-   - **Framework Preset**: Next.js (Vercel auto-detects this).
-   - **Root Directory**: `frontend`
-5. **Environment Variables**:
-   Add the API endpoint for your deployed backend. If you haven't deployed your backend yet, leave it blank (it will fall back to localhost, but won't work live).
-   - `NEXT_PUBLIC_API_URL` = `https://your-live-backend-url.com`
-6. **Deploy**: Click "Deploy". Vercel will handle the rest! Your app will be live with a free `.vercel.app` domain.
+<br />
 
-### Deploying the Backend (Render / Railway)
-To make your application fully functional on the internet, your FastAPI backend must be deployed. We recommend **Render** or **Railway** for Python backends.
-
-#### Option A: Render.com (Recommended & Free Tier)
-1. Log into [Render.com](https://render.com) and click **"New Web Service"**.
-2. Connect your GitHub repository.
-3. Configure the settings:
-   - **Root Directory**: `backend`
-   - **Environment**: `Python 3`
-   - **Build Command**: `pip install -r requirements.txt` (If using wkhtmltopdf, you may need a Dockerfile or a Render `render.yaml` environment to install system dependencies).
-   - **Start Command**: `uvicorn main:app --host 0.0.0.0 --port $PORT`
-4. **Environment Variables**:
-   Add necessary variables like `DATABASE_URL` (if using PostgreSQL), `SECRET_KEY`, etc.
-5. Deploy the service.
-6. Once live, take the provided URL (e.g., `https://ats-resume-api.onrender.com`) and update your Vercel `NEXT_PUBLIC_API_URL` environment variable.
-
-#### Option B: Railway.app
-1. Log into [Railway.app](https://railway.app).
-2. Create a "New Project" -> "Deploy from GitHub repo".
-3. Configure your root directory to `backend`. Railway will automatically detect the `requirements.txt` and install Python.
-4. Set the Start Command to `uvicorn main:app --host 0.0.0.0 --port $PORT`.
-5. Under the "Variables" tab, define your `SECRET_KEY` and connection strings.
-6. Generate a domain name in the "Settings" tab and attach it to your Vercel frontend.
-
----
-
-## 🔑 Best Practices for Live Production
-1. **CORS Origins**: Ensure your backend `main.py` explicitly allows requests from your deployed Vercel domain in its `CORSMiddleware`.
-2. **Secure Cookies / Tokens**: For maximum security in production, migrate from `sessionStorage` to HTTP-Only Secure Cookies for authentication tokens.
-3. **Database Migration**: Do not use local SQLite in production (Render ephemeral disks will delete it). Set up a managed PostgreSQL database (Render provides a free PostgreSQL tier).
-
-*Built with passion by Muhammad Shariq.*
+<div align="center">
+  <i>Crafted with passion to help professionals land their dream jobs.</i>
+</div>
