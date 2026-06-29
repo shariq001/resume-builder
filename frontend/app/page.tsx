@@ -26,7 +26,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0F0726] via-[#1A0B2E] to-[#0A0514] bg-[length:200%_200%] animate-gradient-bg">
+    <div className="flex flex-col min-h-screen relative overflow-hidden bg-gradient-to-br from-[var(--hero-from)] via-[var(--hero-via)] to-[var(--hero-to)] bg-[length:200%_200%] animate-gradient-bg">
       {/* Animated Background Orbs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-accent)] blur-[120px] rounded-full pointer-events-none opacity-20 animate-pulse" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-600 blur-[130px] rounded-full pointer-events-none opacity-20" style={{ animation: 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />

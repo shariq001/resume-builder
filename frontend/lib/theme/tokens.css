@@ -16,6 +16,10 @@
   --color-error:            #FF2A5F;
   --color-success:          #00FF9D;
   --color-warning:          #FFB800;
+  
+  --hero-from: #0F0726;
+  --hero-via: #1A0B2E;
+  --hero-to: #0A0514;
 }
 
 /* Light Theme (Clean High-Contrast) */
@@ -33,4 +37,8 @@
   --color-error:            #F4174D;
   --color-success:          #00C97B;
   --color-warning:          #E5A500;
+  
+  --hero-from: #FFFFFF;
+  --hero-via: #F0F4F8;
+  --hero-to: #E2E8F0;
 }
