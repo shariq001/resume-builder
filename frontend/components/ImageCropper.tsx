@@ -40,17 +40,17 @@ export function ImageCropper({ imageSrc, onCropComplete, onCancel }: ImageCroppe
         </div>
         
         <div className="relative w-full h-[300px] sm:h-[400px] bg-black/50">
-          <Cropper
-            image={imageSrc}
-            crop={crop}
-            zoom={zoom}
-            aspect={1}
-            cropShape="round"
-            showGrid={false}
-            onCropChange={setCrop}
-            onCropComplete={onCropCompleteHandler}
-            onZoomChange={setZoom}
-          />
+          {React.createElement(Cropper as any, {
+            image: imageSrc,
+            crop: crop,
+            zoom: zoom,
+            aspect: 1,
+            cropShape: "round",
+            showGrid: false,
+            onCropChange: setCrop,
+            onCropComplete: onCropCompleteHandler,
+            onZoomChange: setZoom
+          })}
         </div>
         
         <div className="p-4 border-t border-white/10 space-y-4 bg-white/5">
