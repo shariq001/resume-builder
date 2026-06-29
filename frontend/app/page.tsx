@@ -106,7 +106,7 @@ export default function Home() {
         >
            {/* Card 1 */}
            <motion.div variants={itemVariants} whileHover={{ y: -15, scale: 1.03 }} className="relative p-8 rounded-[2rem] border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl overflow-hidden group shadow-2xl shadow-black/40">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 via-transparent to-transparent opacity-100 transition-opacity duration-700"></div>
               
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-indigo-500 rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:scale-110 transition-transform duration-300">
@@ -119,7 +119,7 @@ export default function Home() {
            
            {/* Card 2 */}
            <motion.div variants={itemVariants} whileHover={{ y: -15, scale: 1.03 }} className="relative p-8 rounded-[2rem] border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl overflow-hidden group shadow-2xl shadow-black/40">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-transparent to-transparent opacity-100 transition-opacity duration-700"></div>
               
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-[var(--color-accent)] rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(168,85,247,0.5)] group-hover:scale-110 transition-transform duration-300">
@@ -132,7 +132,7 @@ export default function Home() {
            
            {/* Card 3 */}
            <motion.div variants={itemVariants} whileHover={{ y: -15, scale: 1.03 }} className="relative p-8 rounded-[2rem] border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl overflow-hidden group shadow-2xl shadow-black/40">
-              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-pink-500/20 via-transparent to-transparent opacity-100 transition-opacity duration-700"></div>
               
               <div className="relative z-10">
                 <div className="w-16 h-16 bg-gradient-to-br from-pink-600 to-rose-500 rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(244,63,94,0.5)] group-hover:scale-110 transition-transform duration-300">
