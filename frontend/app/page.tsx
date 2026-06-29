@@ -24,13 +24,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen relative overflow-hidden bg-[var(--color-bg-primary)] transition-colors duration-500">
-      {/* Continuous Animated Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary-alt/10 to-primary/10 bg-[length:200%_200%] animate-gradient-bg pointer-events-none -z-10" />
-      
+    <div className="flex flex-col min-h-screen relative overflow-hidden bg-gradient-to-br from-[#0F0726] via-[#1A0B2E] to-[#0A0514] bg-[length:200%_200%] animate-gradient-bg">
       {/* Animated Background Orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-accent)] blur-[120px] rounded-full pointer-events-none opacity-10" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-500 blur-[130px] rounded-full pointer-events-none opacity-10" />
+      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-accent)] blur-[120px] rounded-full pointer-events-none opacity-20 animate-pulse" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-600 blur-[130px] rounded-full pointer-events-none opacity-20" style={{ animation: 'pulse 8s cubic-bezier(0.4, 0, 0.6, 1) infinite' }} />
 
       {/* Cyberpunk Neon Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f163d_1px,transparent_1px),linear-gradient(to_bottom,#1f163d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_10%,#000_70%,transparent_100%)] opacity-20 pointer-events-none"></div>
