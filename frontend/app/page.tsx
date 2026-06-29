@@ -65,6 +65,25 @@ export default function Home() {
         />
       </svg>
 
+      {/* EPIC KAMEHAMEHA BACKGROUND EFFECT */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200vw] h-[400px] pointer-events-none flex items-center justify-center -z-10 mix-blend-screen overflow-hidden">
+        {/* Core Energy Beam */}
+        <div className="absolute w-full h-6 bg-white blur-[5px] opacity-90 animate-[pulse_0.1s_ease-in-out_infinite] rotate-[-5deg] scale-150"></div>
+        {/* Inner Cyan Aura */}
+        <div className="absolute w-full h-24 bg-cyan-400 blur-[25px] opacity-80 animate-[pulse_0.2s_ease-in-out_infinite] rotate-[-5deg] scale-150"></div>
+        {/* Outer Deep Blue Aura */}
+        <div className="absolute w-full h-56 bg-blue-600 blur-[60px] opacity-60 animate-[pulse_0.4s_ease-in-out_infinite] rotate-[-5deg] scale-150"></div>
+        
+        {/* Center Power Ball (The source) */}
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-white rounded-full blur-[20px] animate-[pulse_0.15s_ease-in-out_infinite]"></div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-cyan-300 rounded-full blur-[40px] opacity-80 animate-[pulse_0.3s_ease-in-out_infinite]"></div>
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-600 rounded-full blur-[90px] opacity-60 animate-[pulse_0.5s_ease-in-out_infinite]"></div>
+        
+        {/* Energy Particles / Flares */}
+        <div className="absolute w-[120vw] h-2 bg-white blur-[2px] rotate-[-2deg] opacity-70 animate-pulse"></div>
+        <div className="absolute w-[120vw] h-2 bg-cyan-200 blur-[3px] rotate-[-8deg] opacity-60 animate-pulse" style={{ animationDuration: '0.7s' }}></div>
+      </div>
+
       <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 py-12 md:py-20 text-center relative z-10">
         <motion.div 
           variants={containerVariants}
@@ -76,7 +95,7 @@ export default function Home() {
             Premium Templates Live
           </motion.div>
           
-          <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-[0_0_20px_rgba(0,0,0,0.8)] [text-shadow:0_4px_20px_black,0_0_40px_black]">
             <span className="inline-block min-w-[280px] sm:min-w-[450px] md:min-w-[600px] text-center w-full">
               <Typewriter
                 options={{
@@ -95,7 +114,7 @@ export default function Home() {
               />
             </span>
             <br className="hidden md:block"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-[0_0_25px_rgba(0,0,0,1)] inline-block [text-shadow:0_0_30px_rgba(59,130,246,0.5)]">
               in Minutes
             </span>
           </motion.h1>
