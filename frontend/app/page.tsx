@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { LayoutTemplate, Eye, FileText, ArrowRight } from "lucide-react";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 
+import Typewriter from 'typewriter-effect';
+
 export default function Home() {
   const { isAuthenticated } = useAuthStore();
   const containerVariants = {
@@ -21,19 +23,6 @@ export default function Home() {
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 100, damping: 20 } }
-  };
-
-  const typingContainer = {
-    hidden: { opacity: 1 },
-    show: {
-      opacity: 1,
-      transition: { staggerChildren: 0.04, delayChildren: 0.1 }
-    }
-  };
-
-  const typingChar = {
-    hidden: { opacity: 0, filter: "blur(10px)", y: 15 },
-    show: { opacity: 1, filter: "blur(0px)", y: 0, transition: { duration: 0.4, ease: "easeOut" } }
   };
 
   return (
@@ -87,27 +76,19 @@ export default function Home() {
             Premium Templates Live
           </motion.div>
           
-          <motion.h1 variants={typingContainer} initial="hidden" animate="show" className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm flex flex-wrap justify-center items-center">
-            {"Build Your Resume".split(" ").map((word, wIdx) => (
-              <span key={wIdx} className="inline-block whitespace-nowrap mr-[0.25em]">
-                {word.split("").map((char, cIdx) => (
-                  <motion.span key={cIdx} variants={typingChar} className="inline-block">
-                    {char}
-                  </motion.span>
-                ))}
-              </span>
-            ))}
-            <br className="hidden md:block w-full"/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block whitespace-nowrap">
-              {"in Minutes".split(" ").map((word, wIdx) => (
-                <span key={`grad-${wIdx}`} className="inline-block whitespace-nowrap mr-[0.25em]">
-                  {word.split("").map((char, cIdx) => (
-                    <motion.span key={`grad-${wIdx}-${cIdx}`} variants={typingChar} className="inline-block">
-                      {char}
-                    </motion.span>
-                  ))}
-                </span>
-              ))}
+          <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
+            Build Your Resume <br className="hidden md:block"/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[var(--color-accent)] via-blue-500 to-indigo-500 drop-shadow-lg inline-block min-w-[280px] sm:min-w-[400px]">
+              <Typewriter
+                options={{
+                  strings: ['in Minutes.', 'with AI.', 'for Free.', 'Like a Pro.'],
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  deleteSpeed: 30,
+                  cursor: '|',
+                }}
+              />
             </span>
           </motion.h1>
           
