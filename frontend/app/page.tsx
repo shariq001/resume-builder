@@ -25,6 +25,9 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen relative overflow-hidden bg-[var(--color-bg-primary)] transition-colors duration-500">
+      {/* Continuous Animated Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-primary-alt/10 to-primary/10 bg-[length:200%_200%] animate-gradient-bg pointer-events-none -z-10" />
+      
       {/* Animated Background Orbs */}
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-accent)] blur-[120px] rounded-full pointer-events-none opacity-10" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-500 blur-[130px] rounded-full pointer-events-none opacity-10" />
