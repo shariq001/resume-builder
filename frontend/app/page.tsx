@@ -108,11 +108,8 @@ export default function Home() {
            <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-blue-500/30 bg-gradient-to-br from-blue-900/40 via-[#0a0514]/90 to-indigo-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(59,130,246,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(59,130,246,0.5)] group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
-                  <LayoutTemplate size={32} strokeWidth={2} className="drop-shadow-lg" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-display text-white">Premium Templates</h3>
+              <div className="relative z-10 pt-4">
+                <h3 className="text-3xl font-bold mb-4 font-display text-white">Premium Templates</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">Beautifully crafted layouts designed by experts to catch the eye of recruiters and hiring managers instantly.</p>
               </div>
            </motion.div>
@@ -121,11 +118,8 @@ export default function Home() {
            <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-purple-500/30 bg-gradient-to-br from-purple-900/40 via-[#0a0514]/90 to-fuchsia-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(168,85,247,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-fuchsia-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(168,85,247,0.5)] group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
-                  <Eye size={32} strokeWidth={2} className="drop-shadow-lg" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-display text-white">Instant Live Preview</h3>
+              <div className="relative z-10 pt-4">
+                <h3 className="text-3xl font-bold mb-4 font-display text-white">Instant Live Preview</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">See your resume update in real-time as you type, perfectly mapped to your selected layout without delays.</p>
               </div>
            </motion.div>
@@ -134,11 +128,8 @@ export default function Home() {
            <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-pink-500/30 bg-gradient-to-br from-pink-900/40 via-[#0a0514]/90 to-rose-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(244,63,94,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
-              <div className="relative z-10">
-                <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-2xl flex items-center justify-center text-white mb-8 shadow-[0_0_20px_rgba(244,63,94,0.5)] group-hover:rotate-6 group-hover:scale-110 transition-all duration-500">
-                  <FileText size={32} strokeWidth={2} className="drop-shadow-lg" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 font-display text-white">Real-Time PDF</h3>
+              <div className="relative z-10 pt-4">
+                <h3 className="text-3xl font-bold mb-4 font-display text-white">Real-Time PDF</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">Pixel-perfect, parser-friendly PDF generation with standard accessibility features baked in.</p>
               </div>
            </motion.div>
