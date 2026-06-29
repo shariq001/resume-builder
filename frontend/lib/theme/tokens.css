@@ -1,0 +1,36 @@
+/* Premium Neon Dark Theme (Default) */
+:root[data-theme="dark"], :root {
+  --color-bg-primary:       #020005; /* Deepest purple-black */
+  --color-bg-secondary:     #0A0514; /* Deep twilight */
+  --color-bg-surface:       #130A2A;
+  --color-text-primary:     #FFFFFF;
+  --color-text-secondary:   #A09DB0;
+  --color-text-muted:       #5C596E;
+  
+  /* Cyberpunk / Neon Accents */
+  --color-accent:           #00F0FF; /* Neon Cyan */
+  --color-accent-hover:     #00D1FF;
+  --color-accent-alt:       #FF007F; /* Neon Pink */
+  
+  --color-border:           #1F163D;
+  --color-error:            #FF2A5F;
+  --color-success:          #00FF9D;
+  --color-warning:          #FFB800;
+}
+
+/* Light Theme (Clean High-Contrast) */
+:root[data-theme="light"] {
+  --color-bg-primary:       #FFFFFF;
+  --color-bg-secondary:     #F7F7F9;
+  --color-bg-surface:       #EAEAEF;
+  --color-text-primary:     #080414;
+  --color-text-secondary:   #545161;
+  --color-text-muted:       #8A8796;
+  --color-accent:           #4A00FF; /* Deep Electric Blue */
+  --color-accent-hover:     #3B00CC;
+  --color-accent-alt:       #FF007F; 
+  --color-border:           #D6D4DF;
+  --color-error:            #F4174D;
+  --color-success:          #00C97B;
+  --color-warning:          #E5A500;
+}

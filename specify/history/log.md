@@ -1,0 +1,32 @@
+# Action Log
+
+- **2026-06-27**: Created `specify` directory and saved `constitution.md`. Initialized `history` directory to track all working actions.
+- **2026-06-27**: Saved Spec 01 to `specify/spec01/spec.md`.
+- **2026-06-27**: Generated task breakdown for Spec 01 in `specify/spec01/tasks.md`.
+- **2026-06-27**: Moved `history` directory into `specify` per user instruction.
+- **2026-06-27**: Implemented Task 1: Backend Setup & Configuration.
+- **2026-06-27**: Implemented Task 2: Database Models.
+- **2026-06-27**: Implemented Task 3: Repositories.
+- **2026-06-27**: Implemented Task 4: Authentication & User Schemas.
+- **2026-06-27**: Implemented Task 5: Authentication Service.
+- **2026-06-27**: Implemented Task 6: API Routers (`/auth` and `/users`).
+- **2026-06-27**: Implemented Task 7: Backend Tests (`test_auth.py`, `test_users.py`).
+- **2026-06-27**: Implemented Task 8: Frontend Initialization.
+- **2026-06-27**: Implemented Task 9: Auth Components.
+- **2026-06-27**: Implemented Task 10: Dashboard Profile UI (ProfileEditor, ThemeToggle, AvatarUpload).
+- **2026-06-27**: Implemented Task 11: End-to-End Validation (Verified spec constraints). Spec 01 Implementation Complete.
+- **2026-06-27**: Saved Spec 02 to `specify/spec02/spec.md`.
+- **2026-06-27**: Acknowledged new user constraint: The agent is solely responsible for all dependency installations (npm/pip) via terminal commands, and will prompt the user for secrets like DB URLs when needed.
+- **2026-06-27**: Generated task breakdown for Spec 02 in `specify/spec02/tasks.md`.
+- **2026-06-27**: Implemented Task 1: Dependencies Setup (ran pip install and npm install).
+- **2026-06-27**: Implemented Task 2: Database Schema & Models (`Resume`, `ResumeSnapshot`).
+- **2026-06-27**: Implemented Task 3: Backend Repositories (`ResumeRepository`).
+- **2026-06-27**: Implemented Task 4: Resume CRUD API (`/resumes` endpoints).
+- **2026-06-27**: Implemented Task 5: PDF Engine Service (`WeasyPrint` integration).
+- **2026-06-27**: Implemented Task 6: Global Form Store & Auto-Save (Zustand 3s debounce).
+- **2026-06-27**: Implemented Task 7 & 8: Smart Form Components (`MultiStepForm`, `ContactInfo`, `ProfessionalSummary`, `WorkExperience`, `Skills`).
+- **2026-06-27**: Implemented Task 9 & 10: ATS Templates & Live Preview (`ClassicTemplate`, `ModernTemplate`, `TemplateSelector`, `LivePreviewPanel`).
+- **2026-06-27**: Implemented Task 11: End-to-End Integration (Frontend routing). Spec 02 Implementation Complete.
+- **2026-06-27**: Saved Spec 03 to `specify/spec03/spec.md`.
+- **2026-06-27**: Generated task breakdown for Spec 03 in `specify/spec03/tasks.md`.
+- **2026-06-27**: Fully implemented Spec 03 (ATS Engine, Keyword Matcher, Design Tokens, SEO).
