@@ -70,7 +70,7 @@ export default function Home() {
           animate="show"
           className="max-w-5xl mx-auto space-y-8"
         >
-          <motion.div variants={itemVariants} className="inline-flex items-center justify-center px-6 py-2.5 rounded-full border border-blue-400/30 bg-gradient-to-br from-[#0F0726] via-[#1A0B2E] to-[#0A0514] bg-[length:200%_200%] animate-gradient-bg text-blue-100 font-semibold text-sm mb-4 shadow-[0_0_15px_rgba(59,130,246,0.2)] backdrop-blur-md tracking-wide">
+          <motion.div variants={itemVariants} className="inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-[#00f2fe] via-[#0a0514] to-[#00f2fe] bg-[length:200%_auto] animate-gradient-slide text-white font-semibold text-sm mb-4 shadow-[0_0_20px_rgba(0,242,254,0.3)] tracking-wide">
             Premium Templates Live
           </motion.div>
           

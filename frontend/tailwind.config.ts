@@ -22,11 +22,16 @@ const config: Config = {
       },
       animation: {
         'gradient-bg': 'gradientBG 15s ease infinite',
+        'gradient-slide': 'gradientSlide 4s linear infinite',
       },
       keyframes: {
         gradientBG: {
           '0%, 100%': { backgroundPosition: '0% 50%' },
           '50%': { backgroundPosition: '100% 50%' },
+        },
+        gradientSlide: {
+          '0%': { backgroundPosition: '200% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
       },
     },
