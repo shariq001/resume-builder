@@ -7,7 +7,7 @@ class Settings(BaseSettings):
     # JWT Settings
     SECRET_KEY: str = "dev_secret_key_change_in_production"
     ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # Database Settings
