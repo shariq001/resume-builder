@@ -10,8 +10,8 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 15
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
-    # Database Settings (Neon Serverless PostgreSQL)
-    DATABASE_URL: str = "postgresql://postgres:postgres@localhost:5432/ats_resume"
+    # Database Settings
+    DATABASE_URL: str = "sqlite:///database.db"
     
     # Allow loading from .env
     model_config = SettingsConfigDict(env_file="backend/.env", case_sensitive=True, extra="ignore")
