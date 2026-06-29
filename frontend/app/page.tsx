@@ -123,33 +123,71 @@ export default function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-20 md:mt-40 px-4 sm:px-0"
+          className="relative grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-20 md:mt-40 px-4 sm:px-0"
         >
+          {/* Animated Connecting Lines (Desktop only) */}
+          <div className="absolute top-1/2 left-[16.66%] right-[16.66%] h-0.5 -translate-y-1/2 hidden md:block z-0 pointer-events-none">
+            <svg className="w-full h-full overflow-visible" preserveAspectRatio="none">
+              {/* Base line */}
+              <line x1="0" y1="0" x2="100%" y2="0" stroke="rgba(59, 130, 246, 0.2)" strokeWidth="2" />
+              {/* Animated data flow dots */}
+              <line 
+                x1="0" y1="0" x2="100%" y2="0" 
+                stroke="rgba(0, 242, 254, 0.8)" 
+                strokeWidth="3" 
+                strokeDasharray="6 30" 
+                strokeLinecap="round"
+              >
+                <animate attributeName="stroke-dashoffset" values="36;0" dur="1.5s" repeatCount="indefinite" />
+              </line>
+              {/* Glow effect on the moving dots */}
+              <line 
+                x1="0" y1="0" x2="100%" y2="0" 
+                stroke="rgba(0, 242, 254, 0.3)" 
+                strokeWidth="8" 
+                strokeDasharray="6 30" 
+                strokeLinecap="round"
+                filter="blur(4px)"
+              >
+                <animate attributeName="stroke-dashoffset" values="36;0" dur="1.5s" repeatCount="indefinite" />
+              </line>
+            </svg>
+          </div>
+
            {/* Card 1 */}
-           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-blue-500/30 bg-gradient-to-br from-blue-900/40 via-[#0a0514]/90 to-indigo-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(59,130,246,0.15)]">
+           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative z-10 p-8 rounded-[2rem] border border-blue-500/30 bg-gradient-to-br from-blue-900/40 via-[#0a0514]/90 to-indigo-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(59,130,246,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
               <div className="relative z-10 pt-4">
+                <div className="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center mb-6 border border-blue-500/50 text-blue-400 shadow-[0_0_15px_rgba(59,130,246,0.5)]">
+                  <LayoutTemplate size={24} />
+                </div>
                 <h3 className="text-3xl font-bold mb-4 font-display text-white">Premium Templates</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">Beautifully crafted layouts designed by experts to catch the eye of recruiters and hiring managers instantly.</p>
               </div>
            </motion.div>
            
            {/* Card 2 */}
-           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-purple-500/30 bg-gradient-to-br from-purple-900/40 via-[#0a0514]/90 to-fuchsia-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(168,85,247,0.15)]">
+           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative z-10 p-8 rounded-[2rem] border border-purple-500/30 bg-gradient-to-br from-purple-900/40 via-[#0a0514]/90 to-fuchsia-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(168,85,247,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-purple-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
               <div className="relative z-10 pt-4">
+                <div className="w-12 h-12 rounded-full bg-purple-500/20 flex items-center justify-center mb-6 border border-purple-500/50 text-purple-400 shadow-[0_0_15px_rgba(168,85,247,0.5)]">
+                  <Eye size={24} />
+                </div>
                 <h3 className="text-3xl font-bold mb-4 font-display text-white">Instant Live Preview</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">See your resume update in real-time as you type, perfectly mapped to your selected layout without delays.</p>
               </div>
            </motion.div>
            
            {/* Card 3 */}
-           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative p-8 rounded-[2rem] border border-pink-500/30 bg-gradient-to-br from-pink-900/40 via-[#0a0514]/90 to-rose-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(244,63,94,0.15)]">
+           <motion.div variants={itemVariants} whileHover={{ y: -10, scale: 1.02 }} className="relative z-10 p-8 rounded-[2rem] border border-pink-500/30 bg-gradient-to-br from-pink-900/40 via-[#0a0514]/90 to-rose-900/40 bg-[length:200%_200%] animate-gradient-bg backdrop-blur-xl overflow-hidden group shadow-[0_0_40px_rgba(244,63,94,0.15)]">
               <div className="absolute top-0 right-0 w-32 h-32 bg-pink-500/20 blur-[50px] rounded-full pointer-events-none"></div>
               
               <div className="relative z-10 pt-4">
+                <div className="w-12 h-12 rounded-full bg-pink-500/20 flex items-center justify-center mb-6 border border-pink-500/50 text-pink-400 shadow-[0_0_15px_rgba(244,63,94,0.5)]">
+                  <FileText size={24} />
+                </div>
                 <h3 className="text-3xl font-bold mb-4 font-display text-white">Real-Time PDF</h3>
                 <p className="text-gray-300 leading-relaxed text-lg">Pixel-perfect, parser-friendly PDF generation with standard accessibility features baked in.</p>
               </div>
