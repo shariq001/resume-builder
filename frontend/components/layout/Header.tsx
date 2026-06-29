@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, User as UserIcon, Moon, Sun } from "lucide-react";
+import { getImageUrl } from "@/lib/utils/getImageUrl";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { ProfileModal } from "@/components/ProfileModal";
 
@@ -68,7 +69,7 @@ export function Header() {
               className="flex items-center gap-2 p-2 rounded-full border border-[var(--color-text-primary)]/10 bg-gradient-to-br from-blue-500/20 to-purple-500/20 text-[var(--color-text-primary)] hover:bg-[var(--color-text-primary)]/10 transition-colors shadow-[0_0_15px_rgba(var(--color-accent-rgb),0.3)]"
             >
               {user?.profile_picture_url ? (
-                <img src={user.profile_picture_url} alt="Profile" className="w-8 h-8 rounded-full object-cover border border-[var(--color-accent)]" />
+                <img src={getImageUrl(user.profile_picture_url)} alt="Profile" className="w-8 h-8 rounded-full object-cover border border-[var(--color-accent)]" />
               ) : (
                 <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] flex items-center justify-center font-bold text-white">
                   {user?.full_name?.charAt(0) || user?.email?.charAt(0) || <UserIcon size={16} />}

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Edit2, Check, X } from "lucide-react";
+import { getImageUrl } from "@/lib/utils/getImageUrl";
 import { ThemeToggle } from "./ThemeToggle";
 import { AvatarUpload } from "./AvatarUpload";
 
@@ -62,8 +63,8 @@ export function ProfileEditor({ initialData }: { initialData: UserProfile }) {
     <div className="max-w-2xl mx-auto p-8 bg-background border border-border rounded-xl shadow-sm">
       <h1 className="text-3xl font-bold mb-8 text-primary">Profile Management</h1>
       
-      <div className="mb-12">
-        <AvatarUpload initialUrl={profile.profile_picture_url} onUpload={handleAvatarUpload} />
+      <div className="flex justify-center mb-8">
+        <AvatarUpload initialUrl={getImageUrl(profile.profile_picture_url) || undefined} onUpload={handleAvatarUpload} />
       </div>
 
       <div className="flex flex-col gap-2 mb-10">

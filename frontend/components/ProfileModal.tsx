@@ -7,6 +7,7 @@ import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useRouter } from "next/navigation";
 import { PasswordStrengthIndicator } from "./auth/PasswordStrengthIndicator";
 import { ImageCropper } from "./ImageCropper";
+import { getImageUrl } from "@/lib/utils/getImageUrl";
 
 export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const { user, logout, fetchUser } = useAuthStore();
@@ -320,7 +321,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
                 <div className="flex flex-col items-center gap-2">
                   <div className="w-20 h-20 rounded-full border border-white/20 overflow-hidden bg-[var(--color-bg-secondary)] flex items-center justify-center relative group">
                     {user.profile_picture_url ? (
-                      <img src={user.profile_picture_url} alt="Profile" className="w-full h-full object-cover" />
+                      <img src={getImageUrl(user.profile_picture_url)} alt="Profile" className="w-full h-full object-cover" />
                     ) : (
                       <UserIcon size={32} className="text-gray-400" />
                     )}
