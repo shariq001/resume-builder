@@ -6,7 +6,7 @@ import { ParticleBackground } from "./ParticleBackground";
 import { LoginPanel } from "./LoginPanel";
 import { SignupPanel } from "./SignupPanel";
 
-export default function AuthPageLayout() {
+export function AuthPageLayout({ children }: { children?: React.ReactNode }) {
   const [isLogin, setIsLogin] = useState(true);
   const shouldReduceMotion = useReducedMotion();
 
@@ -64,23 +64,27 @@ export default function AuthPageLayout() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-alt to-primary bg-[length:200%_200%] animate-gradient-bg rounded-[2rem] blur-xl opacity-20"></div>
         
         <div className="relative bg-[#0A0514]/80 backdrop-blur-3xl border border-primary/20 shadow-2xl shadow-primary/20 rounded-[2rem] p-6 sm:p-10 overflow-hidden">
-          <AnimatePresence mode="wait" custom={isLogin}>
-            <motion.div
-              key={isLogin ? "login" : "signup"}
-              custom={isLogin}
-              variants={variants}
-              initial="enter"
-              animate="center"
-              exit="exit"
-              transition={{ type: "spring", stiffness: 350, damping: 30 }}
-            >
-              {isLogin ? (
-                <LoginPanel onToggle={toggleView} />
-              ) : (
-                <SignupPanel onToggle={toggleView} />
-              )}
-            </motion.div>
-          </AnimatePresence>
+          {children ? (
+            children
+          ) : (
+            <AnimatePresence mode="wait" custom={isLogin}>
+              <motion.div
+                key={isLogin ? "login" : "signup"}
+                custom={isLogin}
+                variants={variants}
+                initial="enter"
+                animate="center"
+                exit="exit"
+                transition={{ type: "spring", stiffness: 350, damping: 30 }}
+              >
+                {isLogin ? (
+                  <LoginPanel onToggle={toggleView} />
+                ) : (
+                  <SignupPanel onToggle={toggleView} />
+                )}
+              </motion.div>
+            </AnimatePresence>
+          )}
         </div>
       </div>
     </div>
