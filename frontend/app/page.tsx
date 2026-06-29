@@ -29,6 +29,40 @@ export default function Home() {
       <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-[var(--color-accent)] blur-[120px] rounded-full pointer-events-none opacity-10" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-blue-500 blur-[130px] rounded-full pointer-events-none opacity-10" />
 
+      {/* Cyberpunk Neon Grid Background */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f163d_1px,transparent_1px),linear-gradient(to_bottom,#1f163d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_10%,#000_70%,transparent_100%)] opacity-20 pointer-events-none"></div>
+
+      {/* Animated Neon Laser Lines */}
+      <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-40">
+        <motion.path
+          d="M -100 200 Q 400 100 900 600 T 2000 300"
+          stroke="var(--color-accent)"
+          strokeWidth="2"
+          fill="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0, 1, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+        />
+        <motion.path
+          d="M 2000 800 Q 1200 900 600 400 T -100 500"
+          stroke="var(--color-accent-alt)"
+          strokeWidth="3"
+          fill="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0, 1, 0] }}
+          transition={{ duration: 8, repeat: Infinity, ease: "linear", delay: 2 }}
+        />
+        <motion.path
+          d="M 100 -200 Q 500 500 1200 200 T 2500 800"
+          stroke="var(--color-accent)"
+          strokeWidth="1.5"
+          fill="none"
+          initial={{ pathLength: 0, opacity: 0 }}
+          animate={{ pathLength: 1, opacity: [0, 1, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: "linear", delay: 4 }}
+        />
+      </svg>
+
       <main className="flex-grow flex flex-col items-center justify-center px-4 sm:px-6 py-12 md:py-20 text-center relative z-10">
         <motion.div 
           variants={containerVariants}
