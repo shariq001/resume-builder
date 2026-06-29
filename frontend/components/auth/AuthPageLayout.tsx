@@ -56,20 +56,12 @@ export default function AuthPageLayout() {
       </svg>
 
       {/* Ambient glowing orbs */}
-      <motion.div 
-        animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.3, 0.15] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen" 
-      />
-      <motion.div 
-        animate={{ scale: [1, 1.3, 1], opacity: [0.1, 0.25, 0.1] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen" 
-      />
+      <div className="absolute top-[-10%] right-[-10%] w-[50vw] h-[50vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
 
       <div className="relative w-full max-w-lg z-10">
         {/* Animated glowing border wrapper */}
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-alt to-primary rounded-[2rem] blur-xl opacity-40 animate-pulse"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-alt to-primary rounded-[2rem] blur-xl opacity-20"></div>
         
         <div className="relative bg-[#0A0514]/80 backdrop-blur-3xl border border-primary/20 shadow-2xl shadow-primary/20 rounded-[2rem] p-10 overflow-hidden">
           <AnimatePresence mode="wait" custom={isLogin}>

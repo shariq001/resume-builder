@@ -18,7 +18,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ats-resume-builder.vercel.app'), // Placeholder domain
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://resume-builder-pro.vercel.app'),
   title: {
     default: "ATS Resume Builder | Professional Resume Maker",
     template: "%s | ATS Resume Builder"

@@ -86,8 +86,8 @@ export function TemplateSelector({ onStartBuilding }: { onStartBuilding: () => v
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1f163d_1px,transparent_1px),linear-gradient(to_bottom,#1f163d_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_70%,transparent_100%)] opacity-30 pointer-events-none"></div>
       
       {/* Orbs */}
-      <motion.div animate={{ scale: [1, 1.1, 1], opacity: [0.15, 0.25, 0.15] }} transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }} className="absolute top-[-20%] left-[20%] w-[40vw] h-[40vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
-      <motion.div animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 2 }} className="absolute bottom-[-20%] right-[10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen" />
+      <div className="absolute top-[-20%] left-[20%] w-[40vw] h-[40vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
+      <div className="absolute bottom-[-20%] right-[10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
 
       <div className="relative z-10 w-full max-w-6xl">
         <div className="text-center mb-16">

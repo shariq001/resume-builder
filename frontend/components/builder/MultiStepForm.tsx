@@ -115,23 +115,15 @@ export function MultiStepForm() {
       </svg>
 
       {/* Ambient glowing orbs */}
-      <motion.div 
-        animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.2, 0.1] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen" 
-      />
-      <motion.div 
-        animate={{ scale: [1, 1.3, 1], opacity: [0.05, 0.15, 0.05] }}
-        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-        className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen" 
-      />
+      <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] bg-primary blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40vw] h-[40vw] bg-primary-alt blur-[150px] rounded-full pointer-events-none mix-blend-screen opacity-10" />
 
       <div className="w-full max-w-2xl mx-auto relative z-10">
         <FormStepper currentStep={currentStep} steps={steps} onStepClick={goToStep} />
         
         <div className="mt-8 relative min-h-[500px]">
           {/* Animated glowing border wrapper */}
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary-alt/30 to-primary/30 rounded-[2rem] blur-xl opacity-40 animate-pulse pointer-events-none"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary-alt/30 to-primary/30 rounded-[2rem] blur-xl opacity-20 pointer-events-none"></div>
           
           <div className="relative bg-[#0A0514]/70 backdrop-blur-2xl border border-primary/20 shadow-2xl shadow-primary/10 rounded-[2rem] p-8 overflow-hidden min-h-[500px]">
             <AnimatePresence mode="wait" custom={direction}>

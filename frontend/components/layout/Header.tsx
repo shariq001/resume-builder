@@ -27,9 +27,7 @@ export function Header() {
   return (
     <>
       <header className="px-4 md:px-8 py-3 md:py-4 flex justify-between items-center relative z-20 overflow-hidden shadow-[0_4px_30px_rgba(0,0,0,0.3)] border-b border-[var(--color-text-primary)]/10 print:hidden">
-        <motion.div 
-          animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
-          transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
+        <div 
           className="absolute inset-0 bg-gradient-to-r from-[var(--color-bg-primary)] via-blue-900/20 to-[var(--color-bg-primary)] bg-[length:200%_200%] backdrop-blur-3xl"
         />
         <motion.div 
