@@ -3,7 +3,7 @@ from typing import Optional
 from uuid import UUID, uuid4
 from sqlmodel import Field, SQLModel
 from sqlalchemy import Column, String
-from sqlalchemy.dialects.postgresql import INET
+
 from enum import Enum
 
 class ThemePreference(str, Enum):
@@ -41,5 +41,5 @@ class AuditLog(SQLModel, table=True):
     action: str = Field(sa_column=Column("action", String(100), nullable=False))
     http_method: str = Field(sa_column=Column("http_method", String(10), nullable=False))
     path: str = Field(nullable=False)
-    ip_address: str = Field(sa_column=Column(INET, nullable=False))
+    ip_address: str = Field(sa_column=Column(String(45), nullable=False))
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
