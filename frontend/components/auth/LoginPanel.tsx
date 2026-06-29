@@ -5,6 +5,7 @@ import { Mail, Lock, ArrowRight, Loader2 } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedInput } from "./AnimatedInput";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 
 export function LoginPanel({ onToggle }: { onToggle: () => void }) {
@@ -115,7 +116,7 @@ export function LoginPanel({ onToggle }: { onToggle: () => void }) {
           className="mb-2"
         />
         <div className="text-right mb-6">
-          <a href="#" className="text-xs font-semibold text-primary hover:text-primary-hover transition-colors">Forgot password?</a>
+          <Link href="/auth/forgot-password" className="text-xs font-semibold text-primary hover:text-primary-hover transition-colors">Forgot password?</Link>
         </div>
       </motion.div>
       

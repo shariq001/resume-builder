@@ -20,6 +20,8 @@ class User(SQLModel, table=True):
     full_name: str = Field(sa_column=Column("full_name", String(150), nullable=False))
     profile_picture_url: Optional[str] = Field(default=None)
     theme_preference: ThemePreference = Field(default=ThemePreference.system)
+    reset_password_token: Optional[str] = Field(sa_column=Column("reset_password_token", String(255), nullable=True))
+    reset_password_expires: Optional[datetime] = Field(default=None)
     created_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
 

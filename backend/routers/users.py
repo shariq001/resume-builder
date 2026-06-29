@@ -65,11 +65,7 @@ async def upload_avatar(
         f.write(contents)
         
     
-    base_url = str(request.base_url)
-    if base_url.endswith("/"):
-        base_url = base_url[:-1]
-    
-    avatar_url = f"{base_url}/avatars/{filename}"
+    avatar_url = f"/avatars/{filename}"
     
     user = auth_service.user_repo.get_by_id(current_user.id)
     if not user:

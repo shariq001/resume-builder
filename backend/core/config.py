@@ -12,6 +12,11 @@ class Settings(BaseSettings):
     
     # Database Settings
     DATABASE_URL: str = "sqlite:///database.db"
+
+    # Email / SMTP Settings
+    SMTP_EMAIL: str = ""
+    SMTP_PASSWORD: str = ""
+    FRONTEND_URL: str = "http://localhost:3000"
     
     # Allow loading from .env
     model_config = SettingsConfigDict(env_file="backend/.env", case_sensitive=True, extra="ignore")

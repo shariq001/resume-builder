@@ -177,3 +177,49 @@ class AuthService:
             path="/users/me/change-password",
             ip_address=ip_address
         ))
+
+    def forgot_password(self, email: str, ip_address: str) -> None:
+        user = self.user_repo.get_by_email(email)
+        if not user:
+            return  # Do not reveal that the user does not exist
+            
+        import secrets
+        from backend.services.email_service import send_reset_password_email
+        
+        token = secrets.token_urlsafe(32)
+        user.reset_password_token = token
+        user.reset_password_expires = datetime.now(timezone.utc) + timedelta(hours=1)
+        self.user_repo.update(user)
+        
+        self.audit_repo.create(AuditLog(
+            user_id=user.id,
+            action="user.forgot_password_requested",
+            http_method="POST",
+            path="/auth/forgot-password",
+            ip_address=ip_address
+        ))
+        
+        send_reset_password_email(user.email, token)
+
+    def reset_password(self, token: str, new_password: str, ip_address: str) -> None:
+        user = self.user_repo.get_by_reset_token(token)
+        if not user:
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired reset token")
+            
+        if not user.reset_password_expires or user.reset_password_expires.replace(tzinfo=timezone.utc) < datetime.now(timezone.utc):
+            raise HTTPException(status_code=status.HTTP_400_BAD_REQUEST, detail="Invalid or expired reset token")
+            
+        user.hashed_password = get_password_hash(new_password)
+        user.reset_password_token = None
+        user.reset_password_expires = None
+        
+        self.user_repo.update(user)
+        self.token_repo.revoke_all_for_user(user.id)
+        
+        self.audit_repo.create(AuditLog(
+            user_id=user.id,
+            action="user.password_reset",
+            http_method="POST",
+            path="/auth/reset-password",
+            ip_address=ip_address
+        ))
