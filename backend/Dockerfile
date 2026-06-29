@@ -32,8 +32,8 @@ COPY . .
 # Create storage directories if they don't exist
 RUN mkdir -p storage/avatars storage/pdfs
 
-# Expose the port the app runs on
-EXPOSE 8000
+# Expose the port the app runs on (7860 is required by Hugging Face Spaces)
+EXPOSE 7860
 
 # Command to run the application using Uvicorn
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD uvicorn main:app --host 0.0.0.0 --port ${PORT:-7860}
