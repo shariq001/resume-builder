@@ -48,7 +48,7 @@ export const useResumeStore = create<ResumeState>((set, get) => ({
                     const templateMap: Record<string, number> = { "modern": 1, "classic": 2, "minimal": 3 };
                     const template_id = templateMap[formData.template] || 1;
 
-                    await fetch("http://127.0.0.1:8000/api/v1/resumes/" + resumeId, {
+                    await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/" + resumeId, {
                         method: "PATCH",
                         headers: {
                             "Content-Type": "application/json",
@@ -77,7 +77,7 @@ export const useResumeStore = create<ResumeState>((set, get) => ({
         set({ saveStatus: "saving" });
         try {
             if (resumeId) {
-                await fetch("http://127.0.0.1:8000/api/v1/resumes/" + resumeId, {
+                await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/" + resumeId, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -90,7 +90,7 @@ export const useResumeStore = create<ResumeState>((set, get) => ({
                 const randomPrefix = prefixes[Math.floor(Math.random() * prefixes.length)];
                 const newTitle = `${randomPrefix} Resume`;
 
-                const res = await fetch("http://127.0.0.1:8000/api/v1/resumes", {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -104,7 +104,7 @@ export const useResumeStore = create<ResumeState>((set, get) => ({
                 if (res.ok) {
                     const newResume = await res.json();
                     set({ resumeId: newResume.id });
-                    await fetch("http://127.0.0.1:8000/api/v1/resumes/" + newResume.id, {
+                    await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/" + newResume.id, {
                         method: "PATCH",
                         headers: {
                             "Content-Type": "application/json",

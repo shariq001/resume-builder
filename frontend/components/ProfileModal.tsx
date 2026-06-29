@@ -47,7 +47,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     setIsLoadingResumes(true);
     try {
       const token = sessionStorage.getItem("access_token");
-      const res = await fetch("http://127.0.0.1:8000/api/v1/resumes", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes", {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (res.ok) {
@@ -65,7 +65,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     if (!editingResumeTitle.trim()) return;
     try {
       const token = sessionStorage.getItem("access_token");
-      await fetch(`http://127.0.0.1:8000/api/v1/resumes/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     if (!confirm("Are you sure you want to delete this resume?")) return;
     try {
       const token = sessionStorage.getItem("access_token");
-      await fetch(`http://127.0.0.1:8000/api/v1/resumes/${id}`, {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` }
       });
@@ -102,14 +102,14 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       const token = sessionStorage.getItem("access_token");
       
       // Generate PDF
-      const genRes = await fetch(`http://127.0.0.1:8000/api/v1/resumes/${id}/generate-pdf`, {
+      const genRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/${id}/generate-pdf`, {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!genRes.ok) throw new Error("Failed to generate");
       
       // Download PDF Blob
-      const downRes = await fetch(`http://127.0.0.1:8000/api/v1/resumes/${id}/download`, {
+      const downRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/resumes/${id}/download`, {
         headers: { Authorization: `Bearer ${token}` }
       });
       if (!downRes.ok) throw new Error("Failed to download");
@@ -129,7 +129,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     setIsSaving(true);
     try {
       const token = sessionStorage.getItem("access_token");
-      await fetch("http://127.0.0.1:8000/api/v1/users/me", {
+      await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/users/me", {
         method: "PATCH",
         headers: { 
           "Content-Type": "application/json",
@@ -167,7 +167,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     setIsSavingPassword(true);
     try {
       const token = sessionStorage.getItem("access_token");
-      const res = await fetch("http://127.0.0.1:8000/api/v1/users/me/change-password", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/users/me/change-password", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -202,7 +202,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
     setIsDeleting(true);
     try {
       const token = sessionStorage.getItem("access_token");
-      const res = await fetch("http://127.0.0.1:8000/api/v1/users/me", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/users/me", {
         method: "DELETE",
         headers: { 
           "Content-Type": "application/json",
@@ -235,7 +235,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
 
     try {
       const token = sessionStorage.getItem("access_token");
-      const res = await fetch("http://127.0.0.1:8000/api/v1/users/me/avatar", {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL || `${process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000"}`}/api/v1/users/me/avatar", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData
