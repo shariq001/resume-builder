@@ -77,7 +77,7 @@ export default function Home() {
           </motion.div>
           
           <motion.h1 variants={itemVariants} className="text-4xl sm:text-6xl md:text-8xl font-display font-black tracking-tight leading-[1.05] drop-shadow-sm">
-            <span className="inline-block min-w-[280px] sm:min-w-[450px] md:min-w-[600px] text-left">
+            <span className="inline-block min-w-[280px] sm:min-w-[450px] md:min-w-[600px] text-center w-full">
               <Typewriter
                 options={{
                   strings: [
