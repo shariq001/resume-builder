@@ -18,8 +18,6 @@ class UserRepository:
         statement = select(User).where(User.email == email)
         return self.session.exec(statement).first()
 
-    def get_by_reset_token(self, token: str) -> Optional[User]:
-        return self.session.exec(select(User).where(User.reset_password_token == token)).first()
 
     def get_by_username(self, username: str) -> Optional[User]:
         statement = select(User).where(User.username == username)

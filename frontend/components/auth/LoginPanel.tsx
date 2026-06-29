@@ -115,9 +115,6 @@ export function LoginPanel({ onToggle }: { onToggle: () => void }) {
           icon={Lock}
           className="mb-2"
         />
-        <div className="text-right mb-6">
-          <Link href="/auth/forgot-password" className="text-xs font-semibold text-primary hover:text-primary-hover transition-colors">Forgot password?</Link>
-        </div>
       </motion.div>
       
       <motion.button 
