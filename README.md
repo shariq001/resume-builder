@@ -1,6 +1,10 @@
 <div align="center">
 
-# ✨ ATS Resume Builder
+<a href="https://linkedin.com/in/muhammad---shariq">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Inter&weight=600&size=30&pause=1000&color=2196F3&center=true&vCenter=true&width=600&height=80&lines=ATS+Resume+Builder;Bypass+Applicant+Tracking+Systems;Craft+Stunning+Resumes" alt="Typing SVG" />
+</a>
+
+<br />
 
 **An elegant, modern, and highly-responsive Resume Builder that helps you bypass Applicant Tracking Systems while presenting a visually stunning document to recruiters.**
 
@@ -20,34 +24,34 @@
 
 <br />
 
-## 🌟 Why This Resume Builder?
+## Why This Resume Builder?
 
 In today's competitive job market, your resume needs to satisfy two completely different audiences: **The AI Bots** (Applicant Tracking Systems) and **The Human Recruiters**. 
 
-Most builders force you to choose between a beautiful design that fails ATS parsing, or a boring text document that puts recruiters to sleep. **We built a solution that flawlessly does both.** 
+Most builders force you to choose between a beautiful design that fails ATS parsing, or a plain text document that fails to impress recruiters. **We built a solution that flawlessly does both.** 
 
 ---
 
-## 🚀 Spectacular Features
+## Spectacular Features
 
-### ⚡ Real-Time Live Preview
+### Real-Time Live Preview
 > *No more blind editing.* Watch your resume compile instantly alongside the editor as you type. Our split-screen engine ensures you know exactly how the final document will look.
 
-### 🤖 ATS-Optimized Export Engine
+### ATS-Optimized Export Engine
 > *Get past the bots.* Our proprietary PDF export utilizes strict document mapping. While it looks like a premium design, the underlying text is perfectly layered so ATS parsers can seamlessly extract your skills and experience.
 
-### 🎨 Intelligent Premium Templates
+### Intelligent Premium Templates
 > Choose between **Modern**, **Classic**, and **Minimal** architectures. Each template automatically scales fonts, re-aligns layouts, and intelligently handles long paragraphs to prevent page overflow.
 
-### 📱 Flawlessly Responsive UI
+### Flawlessly Responsive UI
 > Build your resume from a 320px mobile phone or an ultra-wide desktop. Our interface features touch-friendly sliding menus, dynamic preview toggles, and seamless screen adaptation. 
 
-### 🔐 Secure Cloud Storage
+### Secure Cloud Storage
 > JWT-based authentication allows you to securely save multiple resume versions to your dashboard. Return anytime to edit, duplicate, or delete your resumes safely.
 
 ---
 
-## 🛠️ The Technology Architecture
+## The Technology Architecture
 
 <div align="center">
   <table>
@@ -79,5 +83,9 @@ Most builders force you to choose between a beautiful design that fails ATS pars
 <br />
 
 <div align="center">
-  <i>Crafted with passion to help professionals land their dream jobs.</i>
+  <a href="https://linkedin.com/in/muhammad---shariq">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <br />
+  <i>Developed by <b>Muhammad Shariq</b></i>
 </div>
