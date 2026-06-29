@@ -80,7 +80,12 @@ export default function Home() {
             <span className="inline-block min-w-[280px] sm:min-w-[450px] md:min-w-[600px] text-left">
               <Typewriter
                 options={{
-                  strings: ['Build Your Resume', 'Create Your Resume', 'Design Your Resume', 'Craft Your Resume'],
+                  strings: [
+                    'Build Your Resume', 
+                    'Elevate Your Career', 
+                    'Boost Your Online Presence', 
+                    'Stand Out to Recruiters'
+                  ],
                   autoStart: true,
                   loop: true,
                   delay: 50,
