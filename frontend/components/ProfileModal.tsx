@@ -6,6 +6,7 @@ import { X, LogOut, Trash2, Edit2, FileText, Check, Loader2, Key, Upload, User a
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { useRouter } from "next/navigation";
 import { PasswordStrengthIndicator } from "./auth/PasswordStrengthIndicator";
+import { ImageCropper } from "./ImageCropper";
 
 export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   const { user, logout, fetchUser } = useAuthStore();
@@ -32,6 +33,7 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   const [editingResumeId, setEditingResumeId] = useState<string | null>(null);
   const [editingResumeTitle, setEditingResumeTitle] = useState("");
   const [isUploadingAvatar, setIsUploadingAvatar] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -228,10 +230,21 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   const handleAvatarUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
+    
+    // Read file for cropper
+    const reader = new FileReader();
+    reader.addEventListener("load", () => {
+      setSelectedImage(reader.result?.toString() || null);
+    });
+    reader.readAsDataURL(file);
+    if (fileInputRef.current) fileInputRef.current.value = "";
+  };
 
+  const handleCropComplete = async (croppedImageBlob: Blob) => {
+    setSelectedImage(null);
     setIsUploadingAvatar(true);
     const formData = new FormData();
-    formData.append("file", file);
+    formData.append("file", croppedImageBlob, "avatar.jpg");
 
     try {
       const token = sessionStorage.getItem("access_token");
@@ -250,7 +263,6 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
       console.error(error);
     } finally {
       setIsUploadingAvatar(false);
-      if (fileInputRef.current) fileInputRef.current.value = "";
     }
   };
 
@@ -264,6 +276,13 @@ export function ProfileModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
 
   return (
     <AnimatePresence>
+      {selectedImage && (
+        <ImageCropper
+          imageSrc={selectedImage}
+          onCropComplete={handleCropComplete}
+          onCancel={() => setSelectedImage(null)}
+        />
+      )}
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
         <motion.div 
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}

@@ -63,7 +63,7 @@ export default function AuthPageLayout() {
         {/* Animated glowing border wrapper */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary-alt to-primary rounded-[2rem] blur-xl opacity-20"></div>
         
-        <div className="relative bg-[#0A0514]/80 backdrop-blur-3xl border border-primary/20 shadow-2xl shadow-primary/20 rounded-[2rem] p-10 overflow-hidden">
+        <div className="relative bg-[#0A0514]/80 backdrop-blur-3xl border border-primary/20 shadow-2xl shadow-primary/20 rounded-[2rem] p-6 sm:p-10 overflow-hidden">
           <AnimatePresence mode="wait" custom={isLogin}>
             <motion.div
               key={isLogin ? "login" : "signup"}

@@ -68,7 +68,7 @@ export default function Home() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-20 md:mt-40 px-4 sm:px-0"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mt-20 md:mt-40 px-4 sm:px-0"
         >
            {/* Card 1 */}
            <motion.div variants={itemVariants} whileHover={{ y: -15, scale: 1.03 }} className="relative p-8 rounded-[2rem] border border-white/10 bg-[#0a0514]/80 backdrop-blur-xl overflow-hidden group shadow-2xl shadow-black/40">

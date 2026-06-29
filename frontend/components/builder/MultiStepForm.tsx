@@ -125,7 +125,7 @@ export function MultiStepForm() {
           {/* Animated glowing border wrapper */}
           <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-primary-alt/30 to-primary/30 rounded-[2rem] blur-xl opacity-20 pointer-events-none"></div>
           
-          <div className="relative bg-[#0A0514]/70 backdrop-blur-2xl border border-primary/20 shadow-2xl shadow-primary/10 rounded-[2rem] p-8 overflow-hidden min-h-[500px]">
+          <div className="relative bg-[#0A0514]/70 backdrop-blur-2xl border border-primary/20 shadow-2xl shadow-primary/10 rounded-[2rem] p-5 sm:p-8 overflow-hidden min-h-[500px]">
             <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentStep}

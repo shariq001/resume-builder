@@ -97,7 +97,7 @@ export function TemplateSelector({ onStartBuilding }: { onStartBuilding: () => v
           <p className="text-xl text-gray-400">Select a beautifully crafted template to begin your journey.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {TEMPLATES.map((tpl, index) => (
             <motion.div
               key={tpl.id}
