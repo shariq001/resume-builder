@@ -29,6 +29,8 @@ export function ModernTemplate({ data }: { data: any }) {
           <p>{contact.email}</p>
           <p>{contact.phone}</p>
           <p>{contact.location}</p>
+          {contact.linkedin && <p>{contact.linkedin}</p>}
+          {contact.github && <p>{contact.github}</p>}
         </div>
       </div>
 

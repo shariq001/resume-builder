@@ -26,6 +26,8 @@ export function MinimalTemplate({ data }: { data: any }) {
           {contact.email && <span>{contact.email}</span>}
           {contact.phone && <span>{contact.phone}</span>}
           {contact.location && <span>{contact.location}</span>}
+          {contact.linkedin && <span>{contact.linkedin}</span>}
+          {contact.github && <span>{contact.github}</span>}
           {contact.jobTitle && <span className="font-medium text-gray-700">{contact.jobTitle}</span>}
         </div>
       </header>

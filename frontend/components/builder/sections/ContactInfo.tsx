@@ -59,6 +59,14 @@ export function ContactInfo({ onNext }: { onNext: () => void }) {
           <input name="location" value={contact.location || ""} onChange={handleChange} className={`w-full p-2 border rounded bg-transparent ${errors.location ? 'border-red-500' : 'border-border'}`} />
           {errors.location && <span className="text-red-500 text-xs">{errors.location}</span>}
         </div>
+        <div>
+          <label className="text-sm font-semibold opacity-80 block mb-1">LinkedIn URL <span className="text-xs font-normal opacity-70">(Optional)</span></label>
+          <input name="linkedin" value={contact.linkedin || ""} onChange={handleChange} placeholder="https://linkedin.com/in/..." className="w-full p-2 border rounded bg-transparent border-border" />
+        </div>
+        <div>
+          <label className="text-sm font-semibold opacity-80 block mb-1">GitHub URL <span className="text-xs font-normal opacity-70">(Optional)</span></label>
+          <input name="github" value={contact.github || ""} onChange={handleChange} placeholder="https://github.com/..." className="w-full p-2 border rounded bg-transparent border-border" />
+        </div>
       </div>
       
       <div className="flex justify-end mt-6">

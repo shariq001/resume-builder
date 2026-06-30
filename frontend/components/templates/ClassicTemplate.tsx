@@ -25,7 +25,7 @@ export function ClassicTemplate({ data }: { data: any }) {
         <h1 className="text-3xl font-bold uppercase tracking-wider mb-1">{contact.fullName || "Your Name"}</h1>
         {contact.jobTitle && <p className="text-md italic mb-2">{contact.jobTitle}</p>}
         <p className="text-sm">
-          {[contact.location, contact.phone, contact.email].filter(Boolean).join(" | ")}
+          {[contact.location, contact.phone, contact.email, contact.linkedin, contact.github].filter(Boolean).join(" | ")}
         </p>
       </div>
 

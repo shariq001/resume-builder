@@ -58,8 +58,10 @@ async def upload_avatar(
         
     os.makedirs("storage/avatars", exist_ok=True)
     import re
+    import time
     safe_filename = re.sub(r'[^a-zA-Z0-9_\.-]', '_', file.filename)
-    filename = f"{current_user.id}_{safe_filename}"
+    timestamp = int(time.time())
+    filename = f"{current_user.id}_{timestamp}_{safe_filename}"
     file_path = f"storage/avatars/{filename}"
     with open(file_path, "wb") as f:
         f.write(contents)
