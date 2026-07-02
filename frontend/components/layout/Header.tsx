@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, User as UserIcon, Moon, Sun } from "lucide-react";
+import { ArrowRight, User as UserIcon, Moon, Sun, Home } from "lucide-react";
 import { getImageUrl } from "@/lib/utils/getImageUrl";
 import { useAuthStore } from "@/lib/store/useAuthStore";
 import { ProfileModal } from "@/components/ProfileModal";
@@ -47,6 +47,11 @@ export function Header() {
           animate={{ opacity: 1, x: 0 }}
           className="relative z-10 flex items-center gap-4"
         >
+          <Link href="/" className="text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] font-semibold transition-colors flex items-center gap-1.5 px-2 text-sm sm:text-base">
+            <Home size={18} />
+            <span className="hidden sm:inline">Home</span>
+          </Link>
+
           <button 
             onClick={toggleTheme}
             className="p-2.5 rounded-full bg-[var(--color-text-primary)]/5 border border-[var(--color-text-primary)]/10 text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:bg-[var(--color-text-primary)]/10 transition-colors shadow-sm"
