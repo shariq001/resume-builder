@@ -19,39 +19,39 @@ export function ClassicTemplate({ data }: { data: any }) {
   };
 
   return (
-    <div className="w-full bg-white text-black p-8 font-serif" style={{ fontFamily: "Georgia, serif", fontSize: "11pt" }}>
+    <div className="w-full bg-white text-gray-800 p-8 font-serif" style={{ fontFamily: "Georgia, serif", fontSize: "11pt" }}>
       {/* Contact Info */}
-      <div className="text-center mb-6">
-        <h1 className="text-3xl font-bold uppercase tracking-wider mb-1">{contact.fullName || "Your Name"}</h1>
-        {contact.jobTitle && <p className="text-md italic mb-2">{contact.jobTitle}</p>}
-        <p className="text-sm">
-          {[contact.location, contact.phone, contact.email, contact.linkedin, contact.github].filter(Boolean).join(" | ")}
+      <div className="text-center mb-4">
+        <h1 className="text-3xl font-bold uppercase tracking-wider mb-0.5 text-gray-900">{contact.fullName || "Your Name"}</h1>
+        {contact.jobTitle && <p className="text-md italic mb-1 text-gray-700">{contact.jobTitle}</p>}
+        <p className="text-sm text-gray-600">
+          {[contact.location, contact.phone, contact.email, contact.linkedin, contact.github].filter(Boolean).join("  •  ")}
         </p>
       </div>
 
       {/* Summary */}
       {summary && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Professional Summary</h2>
-          <p className="text-sm leading-relaxed whitespace-pre-wrap">{summary}</p>
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Professional Summary</h2>
+          <p className="text-sm leading-relaxed whitespace-pre-wrap text-gray-700">{summary}</p>
         </div>
       )}
 
       {/* Experience */}
       {experience.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Work Experience</h2>
-          <div className="flex flex-col gap-4">
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Work Experience</h2>
+          <div className="flex flex-col gap-2.5">
             {experience.map((exp: any, i: number) => (
               <div key={i}>
-                <div className="flex justify-between font-bold">
+                <div className="flex justify-between font-bold text-gray-900">
                   <span>{exp.title}</span>
-                  <span>
+                  <span className="text-sm font-normal text-gray-600">
                     {formatDate(exp.startDate)} - {exp.isCurrentJob ? "Present" : formatDate(exp.endDate)}
                   </span>
                 </div>
-                <div className="italic text-sm mb-1">{exp.company}</div>
-                {exp.description && <p className="text-sm whitespace-pre-wrap">{exp.description}</p>}
+                <div className="italic text-sm text-gray-700 mb-0.5">{exp.company}</div>
+                {exp.description && <p className="text-sm whitespace-pre-wrap text-gray-700">{exp.description}</p>}
               </div>
             ))}
           </div>
@@ -60,18 +60,18 @@ export function ClassicTemplate({ data }: { data: any }) {
 
       {/* Education */}
       {education.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Education</h2>
-          <div className="flex flex-col gap-4">
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Education</h2>
+          <div className="flex flex-col gap-2.5">
             {education.map((edu: any, i: number) => (
               <div key={i}>
-                <div className="flex justify-between font-bold">
+                <div className="flex justify-between font-bold text-gray-900">
                   <span>{edu.degree}</span>
-                  <span>
+                  <span className="text-sm font-normal text-gray-600">
                     {formatDate(edu.startDate)} - {edu.isCurrentStudy ? "Present" : formatDate(edu.endDate)}
                   </span>
                 </div>
-                <div className="italic text-sm">{edu.school} {edu.gpa ? `| GPA: ${edu.gpa}` : ""}</div>
+                <div className="italic text-sm text-gray-700">{edu.school} {edu.gpa ? `| GPA: ${edu.gpa}` : ""}</div>
               </div>
             ))}
           </div>
@@ -80,16 +80,16 @@ export function ClassicTemplate({ data }: { data: any }) {
 
       {/* Projects */}
       {projects.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Projects</h2>
-          <div className="flex flex-col gap-4">
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Projects</h2>
+          <div className="flex flex-col gap-2.5">
             {projects.map((proj: any, i: number) => (
               <div key={i}>
-                <div className="flex justify-between font-bold">
+                <div className="flex justify-between font-bold text-gray-900">
                   <span>{proj.name}</span>
                 </div>
                 {(proj.link || proj.tools) && (
-                  <div className="italic text-sm mb-1 flex flex-wrap items-center gap-1">
+                  <div className="italic text-sm mb-0.5 flex flex-wrap items-center gap-1 text-gray-600">
                     {proj.tools && <span>{proj.tools}</span>}
                     {proj.tools && proj.link && <span>|</span>}
                     {proj.link && (
@@ -104,7 +104,7 @@ export function ClassicTemplate({ data }: { data: any }) {
                     )}
                   </div>
                 )}
-                {proj.description && <p className="text-sm whitespace-pre-wrap">{proj.description}</p>}
+                {proj.description && <p className="text-sm whitespace-pre-wrap text-gray-700">{proj.description}</p>}
               </div>
             ))}
           </div>
@@ -113,14 +113,14 @@ export function ClassicTemplate({ data }: { data: any }) {
 
       {/* Certifications */}
       {certifications.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Certifications</h2>
-          <div className="flex flex-col gap-3">
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Certifications</h2>
+          <div className="flex flex-col gap-2">
             {certifications.map((cert: any, i: number) => (
               <div key={i} className="text-sm">
                 <div className="flex justify-between">
-                  <span>
-                    <span className="font-bold">{cert.name}</span>, {cert.issuer}
+                  <span className="text-gray-800">
+                    <span className="font-bold text-gray-900">{cert.name}</span>, {cert.issuer}
                     {cert.link && (
                       <a 
                         href={cert.link.startsWith('http') ? cert.link : `https://${cert.link}`} 
@@ -132,9 +132,9 @@ export function ClassicTemplate({ data }: { data: any }) {
                       </a>
                     )}
                   </span>
-                  <span>{formatDate(cert.date)}</span>
+                  <span className="text-gray-600">{formatDate(cert.date)}</span>
                 </div>
-                {cert.description && <p className="mt-0.5 whitespace-pre-wrap">{cert.description}</p>}
+                {cert.description && <p className="mt-0.5 whitespace-pre-wrap text-gray-700">{cert.description}</p>}
               </div>
             ))}
           </div>
@@ -143,9 +143,9 @@ export function ClassicTemplate({ data }: { data: any }) {
 
       {/* Skills */}
       {skills.length > 0 && (
-        <div className="mb-6">
-          <h2 className="text-lg font-bold uppercase border-b border-black mb-2 pb-1">Skills</h2>
-          <p className="text-sm">{skills.join(", ")}</p>
+        <div className="mb-4">
+          <h2 className="text-base font-bold uppercase border-b border-gray-400 text-gray-900 mb-1.5 pb-0.5 tracking-wide">Skills</h2>
+          <p className="text-sm text-gray-700">{skills.join(", ")}</p>
         </div>
       )}
     </div>
